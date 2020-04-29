@@ -16,28 +16,28 @@ public class RegistrationController {
 
     @Autowired private RegistrationService registrationService;
 
-    @PostMapping("/corona_app")
+    @PostMapping("/registration")
     public Registration create(@RequestBody Registration registration) {
         return registrationService.save(registration);
     }
 
-    @PutMapping("/corona_app")
+    @PutMapping("/registration")
     public Registration update(@RequestBody Registration registration) {
         return registrationService.save(registration);
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @DeleteMapping("/corona_app/{userId}")
+    @DeleteMapping("/registration/{userId}")
     public void delete(@PathVariable int userId) {
         registrationService.deleteById(userId);
     }
 
-    @GetMapping("/corona_app")
+    @GetMapping("/registration")
     public List<Registration> findAll() {
         return (List<Registration>)registrationService.findAll();
     }
 
-    @GetMapping("/corona_app/{userId}")
+    @GetMapping("/registration/{userId}")
     public Optional<Registration> registrationById(@PathVariable int userId){
         return registrationService.findById(userId);
     }
